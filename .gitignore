@@ -1,0 +1,10 @@
+target/
+*iml
+.idea
+*iws
+*ipr
+*class
+.flattened-pom.xml
+*war
+*jar
+*plantuml
