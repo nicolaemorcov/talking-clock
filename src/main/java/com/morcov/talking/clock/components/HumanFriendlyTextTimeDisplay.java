@@ -3,7 +3,7 @@ package com.morcov.talking.clock.components;
 import java.time.LocalTime;
 
 public interface HumanFriendlyTextTimeDisplay {
-    void displayCurrentTime();
+    String displayCurrentTime();
 
-    void displayTime(LocalTime localTime);
+    String displayTime(LocalTime localTime);
 }

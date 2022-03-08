@@ -25,11 +25,13 @@ public class TalkingClockController {
     }
 
     @GetMapping("/talking-clock/print-time-human-friendly")
-    public void findAllLoggedInUsers(@RequestParam(value = "time", required = false) @DateTimeFormat(pattern = DATE_TIME_FORMAT ) LocalTime time) {
+    public ResponseEntity<?> findAllLoggedInUsers(@RequestParam(value = "time", required = false) @DateTimeFormat(pattern = DATE_TIME_FORMAT ) LocalTime time) {
         if (time == null){
-            humanFriendlyTextTimeDisplay.displayCurrentTime();
+            String body = humanFriendlyTextTimeDisplay.displayCurrentTime();
+            return ResponseEntity.status(HttpStatus.OK).body(body);
         }else {
-            humanFriendlyTextTimeDisplay.displayTime(time);
+            String body = humanFriendlyTextTimeDisplay.displayTime(time);
+            return ResponseEntity.status(HttpStatus.OK).body(body);
         }
     }
 

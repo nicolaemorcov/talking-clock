@@ -30,9 +30,9 @@ public class TalkingClockMain implements ApplicationRunner {
         String[] sourceArgs = args.getSourceArgs();
         if (sourceArgs.length > 0) {
             LocalTime localTime = toLocalTimeFromHHMM(sourceArgs[0]);
-            humanFriendlyTextTimeDisplay.displayTime(localTime);
+            System.out.println(humanFriendlyTextTimeDisplay.displayTime(localTime));
         } else {
-            humanFriendlyTextTimeDisplay.displayCurrentTime();
+            System.out.println(humanFriendlyTextTimeDisplay.displayCurrentTime());
         }
     }
 

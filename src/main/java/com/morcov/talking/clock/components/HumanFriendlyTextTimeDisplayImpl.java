@@ -15,20 +15,20 @@ public class HumanFriendlyTextTimeDisplayImpl implements HumanFriendlyTextTimeDi
         this.timePrinterService = timePrinterService;
     }
 
-    public void displayCurrentTime(){
+    public String displayCurrentTime(){
         LocalTime localTime = LocalTime.now();
-        displayTime(localTime);
+        return displayTime(localTime);
     }
 
     @Override
-    public void displayTime(LocalTime localTime){
+    public String displayTime(LocalTime localTime){
         timePrinterService.populateArray();
         int hour = localTime.getHour();
         int minutes = localTime.getMinute();
         if (hour > 12){
             hour = hour - 12;
         }
-        timePrinterService.printTime(hour, minutes);
+        return timePrinterService.printTime(hour, minutes);
 
     }
 
